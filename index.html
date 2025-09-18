@@ -3,12 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play Sib - Игра-викторина</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Play Sib - Современная игра-викторина о торговой истории Томска и Сибири" />
+    <meta name="keywords" content="викторина, Томск, Сибирь, история, игра, trivia" />
+    <meta name="author" content="Play Sib Game" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://play-sib.vercel.app/" />
+    <meta property="og:title" content="Play Sib - Сибирская викторина" />
+    <meta property="og:description" content="Проверьте свои знания о торговой истории Томска! Современная игра-викторина с колесом фортуны." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Play Sib - Сибирская викторина" />
+    <meta property="twitter:description" content="Проверьте свои знания о торговой истории Томска!" />
+    
+    <!-- Apple specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Play Sib" />
+    
+    <!-- Microsoft specific -->
+    <meta name="msapplication-TileColor" content="#4ECDC4" />
+    <meta name="theme-color" content="#4ECDC4" />
+    
+    <title>Play Sib - Сибирская викторина</title>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Prevenir flash de contenido sin estilo */
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0;
+        font-family: 'Comfortaa', sans-serif;
+      }
+      
+      #root {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Loading spinner */
+      .loading {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-top: 5px solid #4ECDC4;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading"></div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

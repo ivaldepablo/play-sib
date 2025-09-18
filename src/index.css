@@ -196,6 +196,12 @@ body {
   .btn {
     font-size: var(--font-size-base);
     padding: var(--spacing-sm) var(--spacing-lg);
+    min-height: 44px; /* Apple recommended touch target size */
+  }
+  
+  body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -204,6 +210,39 @@ body {
     --font-size-4xl: 1.5rem;
     --font-size-3xl: 1.25rem;
     --font-size-2xl: 1.125rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.25rem;
+    --spacing-2xl: 1.5rem;
+  }
+  
+  .btn {
+    min-height: 48px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --spacing-xl: 1rem;
+    --spacing-2xl: 1.5rem;
+  }
+  
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
   }
 }
 
